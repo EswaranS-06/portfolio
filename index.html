@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eswaran S — SOC Analyst Portfolio</title>
+  <meta name="description" content="Eswaran S — Cyber Defense specialist, SOC Analyst L1, Blue Team operations, SIEM & Threat Detection professional based in Chennai, India." />
+  <meta name="author" content="Eswaran S" />
+  <meta property="og:title" content="Eswaran S — SOC Analyst" />
+  <meta property="og:description" content="Cyber Defense · Blue Team · SIEM · Threat Detection" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon (emoji inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Eswaran S — Home">
+        <span class="logo-bracket">[</span>Eswaran<span class="logo-accent">@SOC</span><span class="logo-bracket">]</span>
+        <span class="nav-cursor">▮</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#about">about</a></li>
+        <li><a href="#skills">skills</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#experience">experience</a></li>
+        <li><a href="#certifications">certs</a></li>
+        <li><a href="#achievements">ctf</a></li>
+        <li><a href="#tools">tools</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <div id="nav-clock" class="nav-clock" aria-label="Current time">00:00:00</div>
+        <button class="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul role="list">
+        <li><a href="#about">about</a></li>
+        <li><a href="#skills">skills</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#experience">experience</a></li>
+        <li><a href="#certifications">certs</a></li>
+        <li><a href="#achievements">ctf</a></li>
+        <li><a href="#tools">tools</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section id="hero" aria-label="Hero section">
+    <!-- Animated canvas background -->
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+    <!-- Grid overlay -->
+    <div class="hero-grid" aria-hidden="true"></div>
+
+    <div class="container hero-inner">
+      <!-- SOC breadcrumb path -->
+      <div class="hero-breadcrumb" aria-hidden="true">
+        <span>/</span><span>soc-ops</span><span>/</span><span>analyst</span><span>/</span><span class="accent-text">eswaran-s</span>
+      </div>
+
+      <div class="hero-content">
+        <!-- Status badge -->
+        <div id="hero-status-badge" class="hero-status" role="status"></div>
+
+        <!-- Name -->
+        <h1 id="hero-name" class="hero-name"></h1>
+
+        <!-- Typing role -->
+        <div class="hero-role-wrap" aria-label="Role">
+          <span class="role-prefix">$</span>
+          <span id="hero-typing" class="hero-typing" aria-live="polite"></span>
+          <span class="cursor-blink" aria-hidden="true">▮</span>
+        </div>
+
+        <!-- Tagline -->
+        <p id="hero-tagline" class="hero-tagline"></p>
+
+        <!-- CTA buttons -->
+        <div id="hero-cta" class="hero-cta"></div>
+
+        <!-- Metrics row (SOC dashboard style) -->
+        <div id="hero-metrics" class="hero-metrics" aria-label="Key metrics"></div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+  ============================================================ -->
+  <section id="about" aria-label="About section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">// 01 — identity</span>
+        <h2 class="section-title">whoami</h2>
+      </div>
+
+      <div class="about-grid">
+        <!-- Terminal window -->
+        <div class="terminal-block reveal" role="complementary" aria-label="About terminal">
+          <div class="terminal-bar" aria-hidden="true">
+            <span class="dot dot-r"></span>
+            <span class="dot dot-y"></span>
+            <span class="dot dot-g"></span>
+            <span class="terminal-filename">~/about.txt</span>
+          </div>
+          <div class="terminal-body" id="about-terminal"></div>
+        </div>
+
+        <!-- Quick stats panel -->
+        <div class="about-stats reveal" id="about-stats" aria-label="Quick information"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SKILLS
+  ============================================================ -->
+  <section id="skills" aria-label="Skills section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">// 02 — capabilities</span>
+        <h2 class="section-title">ls -la <span class="accent-text">skills/</span></h2>
+      </div>
+      <div id="skills-grid" class="skills-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS
+  ============================================================ -->
+  <section id="projects" aria-label="Projects section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">// 03 — builds</span>
+        <h2 class="section-title">find ./projects <span class="accent-text">-type f</span></h2>
+      </div>
+      <div id="projects-grid" class="projects-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EXPERIENCE
+  ============================================================ -->
+  <section id="experience" aria-label="Experience section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">// 04 — work history</span>
+        <h2 class="section-title">cat <span class="accent-text">experience.log</span></h2>
+      </div>
+      <div id="experience-list" class="experience-list"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EDUCATION
+  ============================================================ -->
+  <section id="education" aria-label="Education section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">// 05 — background</span>
+        <h2 class="section-title">cat <span class="accent-text">education.json</span></h2>
+      </div>
+      <div id="education-list" class="education-list"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CERTIFICATIONS
+  ============================================================ -->
+  <section id="certifications" aria-label="Certifications section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">// 06 — credentials</span>
+        <h2 class="section-title">ls ./certifications<span class="accent-text">/</span></h2>
+      </div>
+      <div id="certs-grid" class="certs-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ACHIEVEMENTS / CTF
+  ============================================================ -->
+  <section id="achievements" aria-label="Achievements section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">// 07 — victories</span>
+        <h2 class="section-title">grep <span class="accent-text">-r "achievement"</span> ./logs</h2>
+      </div>
+      <div id="achievements-grid" class="achievements-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TOOLS & TECHNOLOGIES
+  ============================================================ -->
+  <section id="tools" aria-label="Tools and technologies section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">// 08 — arsenal</span>
+        <h2 class="section-title">which <span class="accent-text">tools</span></h2>
+      </div>
+      <div id="tools-container" class="tools-container"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+  <section id="contact" aria-label="Contact section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">// 09 — connect</span>
+        <h2 class="section-title">./contact.sh <span class="accent-text">--open</span></h2>
+      </div>
+      <div id="contact-layout" class="contact-layout"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer id="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span id="footer-credit"></span>
+      </div>
+      <div class="footer-center">
+        <span id="footer-tagline"></span>
+      </div>
+      <div class="footer-right">
+        <span id="footer-year"></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       CERT MODAL
+  ============================================================ -->
+  <div id="cert-modal" class="modal" role="dialog" aria-modal="true" aria-label="Certificate viewer" hidden>
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modal-cert-title">Certificate</h3>
+        <button class="modal-close" id="modal-close" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-cert-preview" id="modal-cert-preview">
+          <div class="cert-placeholder" id="cert-placeholder">
+            <span class="cert-placeholder-icon">🏆</span>
+            <p id="cert-placeholder-name"></p>
+            <p id="cert-placeholder-issuer" class="cert-placeholder-issuer"></p>
+            <p id="cert-placeholder-date" class="cert-placeholder-date"></p>
+            <p class="cert-placeholder-note">Add certificate image to assets/certificates/</p>
+          </div>
+          <img id="modal-cert-img" src="" alt="Certificate" style="display:none;" />
+        </div>
+      </div>
+      <div class="modal-footer" id="modal-footer"></div>
+    </div>
+  </div>
+
+  <!-- Back to top -->
+  <button id="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
