@@ -1,297 +1,286 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eswaran S — SOC Analyst Portfolio</title>
-  <meta name="description" content="Eswaran S — Cyber Defense specialist, SOC Analyst L1, Blue Team operations, SIEM & Threat Detection professional based in Chennai, India." />
-  <meta name="author" content="Eswaran S" />
-  <meta property="og:title" content="Eswaran S — SOC Analyst" />
-  <meta property="og:description" content="Cyber Defense · Blue Team · SIEM · Threat Detection" />
-  <meta property="og:type" content="website" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>Loading workspace&hellip;</title>
+    <meta name="description" content="Cybersecurity portfolio workspace.">
+    <meta name="author" content="">
+    <meta name="robots" content="index, follow">
 
-  <!-- Favicon (emoji inline SVG) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Cybersecurity Portfolio">
+    <meta property="og:description" content="Cybersecurity portfolio workspace.">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <meta name="theme-color" content="#05070d">
 
-  <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Atmospheric background layers -->
+    <div class="atmosphere" aria-hidden="true">
+        <div class="atmosphere__base"></div>
+        <div class="atmosphere__aurora"></div>
+        <div class="atmosphere__grid"></div>
+        <canvas class="atmosphere__canvas" id="bgCanvas"></canvas>
+        <div class="atmosphere__pointer" aria-hidden="true"></div>
+        <div class="atmosphere__noise" aria-hidden="true"></div>
+    </div>
 
-  <!-- ============================================================
-       NAVBAR
-  ============================================================ -->
-  <nav id="navbar" role="navigation" aria-label="Main navigation">
-    <div class="container nav-inner">
-      <a href="#hero" class="nav-logo" aria-label="Eswaran S — Home">
-        <span class="logo-bracket">[</span>Eswaran<span class="logo-accent">@SOC</span><span class="logo-bracket">]</span>
-        <span class="nav-cursor">▮</span>
-      </a>
+    <!-- Initialization sequence -->
+    <div class="boot" id="boot" aria-hidden="true">
+        <div class="boot__inner">
+            <div class="boot__mark" id="bootMark"></div>
+            <div class="boot__title">Initializing workspace</div>
+            <div class="boot__status" id="bootStatus">Initializing workspace</div>
+            <div class="boot__bar"><span class="boot__bar-fill" id="bootBar"></span></div>
+        </div>
+    </div>
 
-      <ul class="nav-links" role="list">
-        <li><a href="#about">about</a></li>
-        <li><a href="#skills">skills</a></li>
-        <li><a href="#projects">projects</a></li>
-        <li><a href="#experience">experience</a></li>
-        <li><a href="#certifications">certs</a></li>
-        <li><a href="#achievements">ctf</a></li>
-        <li><a href="#tools">tools</a></li>
-        <li><a href="#contact">contact</a></li>
-      </ul>
+    <!-- Critical error state -->
+    <noscript>
+        <div class="nojs">
+            <div class="nojs__inner">
+                <h1>JavaScript required</h1>
+                <p>This portfolio workspace needs JavaScript to render. Please enable it to continue.</p>
+            </div>
+        </div>
+    </noscript>
 
-      <div class="nav-right">
-        <div id="nav-clock" class="nav-clock" aria-label="Current time">00:00:00</div>
-        <button class="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-          <span></span><span></span><span></span>
+    <div class="error-state" id="errorState" hidden>
+        <div class="error-state__inner">
+            <div class="error-state__mark">!</div>
+            <h1>Portfolio data could not be loaded</h1>
+            <p>Check that <code>data.json</code> exists and the website is being served through HTTP/HTTPS.</p>
+            <p class="error-state__hint">Tip: run <code>python -m http.server 8000</code> in this folder, then open <code>http://localhost:8000</code>.</p>
+            <p class="error-state__detail" id="errorDetail"></p>
+        </div>
+    </div>
+
+    <!-- Application shell -->
+    <div class="app" id="app" hidden>
+        <!-- Top status bar -->
+        <header class="topbar">
+            <div class="topbar__brand">
+                <span class="topbar__brand-mark" id="brandMark">SYSTEM</span>
+                <span class="topbar__brand-sep">/</span>
+                <span class="topbar__brand-name" id="brandName">Security Workspace</span>
+            </div>
+            <div class="topbar__meta">
+                <span class="topbar__coord" id="topCoord">N 13.08 &middot; E 80.27</span>
+                <span class="topbar__clock" id="topClock" aria-live="off" aria-atomic="true">--:--:--</span>
+                <button type="button" class="topbar__status" id="topStatus" aria-label="Open status detail">
+                    <span class="status-dot" data-status="open" aria-hidden="true"></span>
+                    <span class="topbar__status-label" id="topStatusLabel">Available</span>
+                </button>
+                <button type="button" class="topbar__cmd" id="cmdTrigger" aria-label="Open command palette (Ctrl+K)" title="Command palette (Ctrl+K)">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" width="14" height="14"><path d="M3 5h18v14H3z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 9l2 3-2 3M11 9l2 3-2 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>Search</span>
+                    <kbd>Ctrl K</kbd>
+                </button>
+            </div>
+            <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+        </header>
+
+        <div class="layout">
+            <!-- Sidebar navigation -->
+            <aside class="nav" id="nav" aria-label="Workspace navigation">
+                <div class="nav__identity" id="navIdentity">
+                    <!-- Filled by JS -->
+                </div>
+                <nav class="nav__list" id="navList" aria-orientation="vertical">
+                    <!-- Filled by JS -->
+                </nav>
+                <div class="nav__footer">
+                    <div class="nav__status-panel" id="navStatus"></div>
+                    <div class="nav__links" id="navLinks"></div>
+                </div>
+            </aside>
+
+            <!-- Main workspace -->
+            <main class="workspace" id="workspace" tabindex="-1">
+                <a href="#workspace" class="skip-link">Skip to content</a>
+
+                <!-- Overview / Hero -->
+                <section class="view" id="view-overview" data-section="overview" aria-labelledby="overviewHeading">
+                    <div class="view__hero" id="hero">
+                        <!-- Filled by JS -->
+                    </div>
+                    <div class="view__panels" id="overviewPanels">
+                        <!-- Filled by JS -->
+                    </div>
+                </section>
+
+                <!-- Experience -->
+                <section class="view" id="view-experience" data-section="experience" hidden aria-labelledby="experienceHeading">
+                    <header class="view__head">
+                        <span class="view__eyebrow">SECTION / 02</span>
+                        <h2 class="view__title" id="experienceHeading">Experience</h2>
+                        <p class="view__sub" id="experienceSub"></p>
+                    </header>
+                    <div class="timeline" id="experienceTimeline" role="list">
+                        <!-- Filled by JS -->
+                    </div>
+                </section>
+
+                <!-- Projects -->
+                <section class="view" id="view-projects" data-section="projects" hidden aria-labelledby="projectsHeading">
+                    <header class="view__head">
+                        <span class="view__eyebrow">SECTION / 03</span>
+                        <h2 class="view__title" id="projectsHeading">Projects</h2>
+                        <p class="view__sub" id="projectsSub"></p>
+                    </header>
+                    <div class="filters" id="projectFilters" role="tablist" aria-label="Filter projects by domain"></div>
+                    <div class="case-grid" id="projectsGrid">
+                        <!-- Filled by JS -->
+                    </div>
+                </section>
+
+                <!-- Labs -->
+                <section class="view" id="view-labs" data-section="labs" hidden aria-labelledby="labsHeading">
+                    <header class="view__head">
+                        <span class="view__eyebrow">SECTION / 04</span>
+                        <h2 class="view__title" id="labsHeading">Security Labs</h2>
+                        <p class="view__sub" id="labsSub"></p>
+                    </header>
+                    <div class="lab-grid" id="labsGrid"></div>
+                </section>
+
+                <!-- Skills -->
+                <section class="view" id="view-skills" data-section="skills" hidden aria-labelledby="skillsHeading">
+                    <header class="view__head">
+                        <span class="view__eyebrow">SECTION / 05</span>
+                        <h2 class="view__title" id="skillsHeading">Skills</h2>
+                        <p class="view__sub" id="skillsSub"></p>
+                    </header>
+                    <div class="skill-search-wrap">
+                        <input type="search" class="skill-search" id="skillSearch" placeholder="Filter skills&hellip;" aria-label="Filter skills" autocomplete="off">
+                        <span class="skill-search-count" id="skillSearchCount" hidden></span>
+                        <button type="button" class="skill-search-clear" id="skillSearchClear" hidden aria-label="Clear skill search">&times;</button>
+                    </div>
+                    <div class="skill-empty-state" id="skillEmptyState" hidden>
+                        <p>No skills matching <span id="skillEmptyQuery"></span></p>
+                    </div>
+                    <div class="skill-groups" id="skillGroups"></div>
+                </section>
+
+                <!-- Certifications -->
+                <section class="view" id="view-certifications" data-section="certifications" hidden aria-labelledby="certsHeading">
+                    <header class="view__head">
+                        <span class="view__eyebrow">SECTION / 06</span>
+                        <h2 class="view__title" id="certsHeading">Certifications</h2>
+                        <p class="view__sub" id="certsSub"></p>
+                    </header>
+                    <div class="cert-list" id="certsList"></div>
+                </section>
+
+                <!-- Achievements -->
+                <section class="view" id="view-achievements" data-section="achievements" hidden aria-labelledby="achHeading">
+                    <header class="view__head">
+                        <span class="view__eyebrow">SECTION / 07</span>
+                        <h2 class="view__title" id="achHeading">Achievements</h2>
+                        <p class="view__sub" id="achSub"></p>
+                    </header>
+                    <div class="ach-grid" id="achievementsGrid"></div>
+                </section>
+
+                <!-- Education -->
+                <section class="view" id="view-education" data-section="education" hidden aria-labelledby="eduHeading">
+                    <header class="view__head">
+                        <span class="view__eyebrow">SECTION / 08</span>
+                        <h2 class="view__title" id="eduHeading">Education</h2>
+                        <p class="view__sub" id="eduSub"></p>
+                    </header>
+                    <div class="edu-list" id="educationList"></div>
+                </section>
+
+                <!-- Documents -->
+                <section class="view" id="view-documents" data-section="documents" hidden aria-labelledby="docsHeading">
+                    <header class="view__head">
+                        <span class="view__eyebrow">SECTION / 09</span>
+                        <h2 class="view__title" id="docsHeading">Documents</h2>
+                        <p class="view__sub" id="docsSub"></p>
+                    </header>
+                    <div class="doc-list" id="documentsList"></div>
+                </section>
+
+                <!-- Contact -->
+                <section class="view" id="view-contact" data-section="contact" hidden aria-labelledby="contactHeading">
+                    <header class="view__head">
+                        <span class="view__eyebrow">SECTION / 10</span>
+                        <h2 class="view__title" id="contactHeading">Contact</h2>
+                        <p class="view__sub" id="contactSub"></p>
+                    </header>
+                    <div class="contact-panel" id="contactPanel"></div>
+                </section>
+            </main>
+        </div>
+
+        <button type="button" class="back-to-top" id="backToTop" hidden aria-label="Back to top" title="Back to top">
+            <svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>TOP</span>
         </button>
-      </div>
+
+        <footer class="bottombar">
+            <span class="bottombar__left" id="bottomLeft">portfolio / static build</span>
+            <span class="bottombar__right" id="bottomRight">v1.0</span>
+        </footer>
     </div>
 
-    <!-- Mobile drawer -->
-    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-      <ul role="list">
-        <li><a href="#about">about</a></li>
-        <li><a href="#skills">skills</a></li>
-        <li><a href="#projects">projects</a></li>
-        <li><a href="#experience">experience</a></li>
-        <li><a href="#certifications">certs</a></li>
-        <li><a href="#achievements">ctf</a></li>
-        <li><a href="#tools">tools</a></li>
-        <li><a href="#contact">contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- ============================================================
-       HERO
-  ============================================================ -->
-  <section id="hero" aria-label="Hero section">
-    <!-- Animated canvas background -->
-    <canvas id="hero-canvas" aria-hidden="true"></canvas>
-
-    <!-- Grid overlay -->
-    <div class="hero-grid" aria-hidden="true"></div>
-
-    <div class="container hero-inner">
-      <!-- SOC breadcrumb path -->
-      <div class="hero-breadcrumb" aria-hidden="true">
-        <span>/</span><span>soc-ops</span><span>/</span><span>analyst</span><span>/</span><span class="accent-text">eswaran-s</span>
-      </div>
-
-      <div class="hero-content">
-        <!-- Status badge -->
-        <div id="hero-status-badge" class="hero-status" role="status"></div>
-
-        <!-- Name -->
-        <h1 id="hero-name" class="hero-name"></h1>
-
-        <!-- Typing role -->
-        <div class="hero-role-wrap" aria-label="Role">
-          <span class="role-prefix">$</span>
-          <span id="hero-typing" class="hero-typing" aria-live="polite"></span>
-          <span class="cursor-blink" aria-hidden="true">▮</span>
+    <!-- Command palette -->
+    <div class="palette" id="palette" hidden role="dialog" aria-modal="true" aria-label="Command palette">
+        <div class="palette__backdrop" data-palette-close></div>
+        <div class="palette__panel" role="combobox" aria-expanded="true" aria-haspopup="listbox" aria-owns="paletteResults">
+            <div class="palette__input-row">
+                <svg class="palette__icon" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                <input type="text" class="palette__input" id="paletteInput" placeholder="Search projects, skills, certificates&hellip;" autocomplete="off" spellcheck="false" aria-controls="paletteResults" aria-autocomplete="list">
+                <kbd class="palette__esc">Esc</kbd>
+            </div>
+            <ul class="palette__results" id="paletteResults" role="listbox" aria-label="Search results"></ul>
+            <div class="palette__hint" aria-hidden="true">
+                <span><kbd>&uarr;</kbd> <kbd>&darr;</kbd> navigate</span>
+                <span><kbd>Enter</kbd> open</span>
+                <span><kbd>Esc</kbd> dismiss</span>
+            </div>
         </div>
-
-        <!-- Tagline -->
-        <p id="hero-tagline" class="hero-tagline"></p>
-
-        <!-- CTA buttons -->
-        <div id="hero-cta" class="hero-cta"></div>
-
-        <!-- Metrics row (SOC dashboard style) -->
-        <div id="hero-metrics" class="hero-metrics" aria-label="Key metrics"></div>
-      </div>
     </div>
 
-    <!-- Scroll indicator -->
-    <div class="scroll-indicator" aria-hidden="true">
-      <span>scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       ABOUT
-  ============================================================ -->
-  <section id="about" aria-label="About section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">// 01 — identity</span>
-        <h2 class="section-title">whoami</h2>
-      </div>
-
-      <div class="about-grid">
-        <!-- Terminal window -->
-        <div class="terminal-block reveal" role="complementary" aria-label="About terminal">
-          <div class="terminal-bar" aria-hidden="true">
-            <span class="dot dot-r"></span>
-            <span class="dot dot-y"></span>
-            <span class="dot dot-g"></span>
-            <span class="terminal-filename">~/about.txt</span>
-          </div>
-          <div class="terminal-body" id="about-terminal"></div>
+    <!-- Project detail modal -->
+    <div class="modal" id="modalProject" hidden role="dialog" aria-modal="true" aria-labelledby="modalProjectTitle">
+        <div class="modal__backdrop" data-modal-close></div>
+        <div class="modal__panel" id="modalProjectPanel" role="document">
+            <button type="button" class="modal__close" data-modal-close aria-label="Close project detail">
+                <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
+            <div class="modal__content" id="modalProjectContent">
+                <!-- Filled by JS -->
+            </div>
         </div>
-
-        <!-- Quick stats panel -->
-        <div class="about-stats reveal" id="about-stats" aria-label="Quick information"></div>
-      </div>
     </div>
-  </section>
 
-  <!-- ============================================================
-       SKILLS
-  ============================================================ -->
-  <section id="skills" aria-label="Skills section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">// 02 — capabilities</span>
-        <h2 class="section-title">ls -la <span class="accent-text">skills/</span></h2>
-      </div>
-      <div id="skills-grid" class="skills-grid"></div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       PROJECTS
-  ============================================================ -->
-  <section id="projects" aria-label="Projects section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">// 03 — builds</span>
-        <h2 class="section-title">find ./projects <span class="accent-text">-type f</span></h2>
-      </div>
-      <div id="projects-grid" class="projects-grid"></div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       EXPERIENCE
-  ============================================================ -->
-  <section id="experience" aria-label="Experience section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">// 04 — work history</span>
-        <h2 class="section-title">cat <span class="accent-text">experience.log</span></h2>
-      </div>
-      <div id="experience-list" class="experience-list"></div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       EDUCATION
-  ============================================================ -->
-  <section id="education" aria-label="Education section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">// 05 — background</span>
-        <h2 class="section-title">cat <span class="accent-text">education.json</span></h2>
-      </div>
-      <div id="education-list" class="education-list"></div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       CERTIFICATIONS
-  ============================================================ -->
-  <section id="certifications" aria-label="Certifications section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">// 06 — credentials</span>
-        <h2 class="section-title">ls ./certifications<span class="accent-text">/</span></h2>
-      </div>
-      <div id="certs-grid" class="certs-grid"></div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       ACHIEVEMENTS / CTF
-  ============================================================ -->
-  <section id="achievements" aria-label="Achievements section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">// 07 — victories</span>
-        <h2 class="section-title">grep <span class="accent-text">-r "achievement"</span> ./logs</h2>
-      </div>
-      <div id="achievements-grid" class="achievements-grid"></div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       TOOLS & TECHNOLOGIES
-  ============================================================ -->
-  <section id="tools" aria-label="Tools and technologies section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">// 08 — arsenal</span>
-        <h2 class="section-title">which <span class="accent-text">tools</span></h2>
-      </div>
-      <div id="tools-container" class="tools-container"></div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       CONTACT
-  ============================================================ -->
-  <section id="contact" aria-label="Contact section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">// 09 — connect</span>
-        <h2 class="section-title">./contact.sh <span class="accent-text">--open</span></h2>
-      </div>
-      <div id="contact-layout" class="contact-layout"></div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
-  <footer id="footer" role="contentinfo">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <span id="footer-credit"></span>
-      </div>
-      <div class="footer-center">
-        <span id="footer-tagline"></span>
-      </div>
-      <div class="footer-right">
-        <span id="footer-year"></span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ============================================================
-       CERT MODAL
-  ============================================================ -->
-  <div id="cert-modal" class="modal" role="dialog" aria-modal="true" aria-label="Certificate viewer" hidden>
-    <div class="modal-backdrop" id="modal-backdrop"></div>
-    <div class="modal-box">
-      <div class="modal-header">
-        <h3 id="modal-cert-title">Certificate</h3>
-        <button class="modal-close" id="modal-close" aria-label="Close modal">✕</button>
-      </div>
-      <div class="modal-body">
-        <div class="modal-cert-preview" id="modal-cert-preview">
-          <div class="cert-placeholder" id="cert-placeholder">
-            <span class="cert-placeholder-icon">🏆</span>
-            <p id="cert-placeholder-name"></p>
-            <p id="cert-placeholder-issuer" class="cert-placeholder-issuer"></p>
-            <p id="cert-placeholder-date" class="cert-placeholder-date"></p>
-            <p class="cert-placeholder-note">Add certificate image to assets/certificates/</p>
-          </div>
-          <img id="modal-cert-img" src="" alt="Certificate" style="display:none;" />
+    <!-- Media viewer -->
+    <div class="media-viewer" id="mediaViewer" hidden role="dialog" aria-modal="true" aria-labelledby="mediaViewerCaption">
+        <div class="media-viewer__backdrop" data-media-close></div>
+        <div class="media-viewer__stage" id="mediaStage">
+            <button type="button" class="media-viewer__close" data-media-close aria-label="Close media viewer">
+                <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
+            <div class="media-viewer__body" id="mediaBody">
+                <!-- Filled by JS -->
+            </div>
+            <div class="media-viewer__caption" id="mediaViewerCaption"></div>
         </div>
-      </div>
-      <div class="modal-footer" id="modal-footer"></div>
     </div>
-  </div>
 
-  <!-- Back to top -->
-  <button id="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+    <!-- Toast notifications -->
+    <div class="toasts" id="toasts" aria-live="polite" aria-atomic="true"></div>
 
-  <script src="script.js"></script>
+    <script src="js/components.js" defer></script>
+    <script src="js/app.js" defer></script>
 </body>
 </html>

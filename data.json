@@ -1,307 +1,198 @@
 {
-  "meta": {
-    "siteTitle": "Eswaran S — SOC Analyst Portfolio",
-    "favicon": "🛡️",
-    "seoDescription": "Eswaran S — Cyber Defense specialist, SOC Analyst L1, Blue Team operations, SIEM & Threat Detection professional based in Chennai, India."
-  },
-  "hero": {
+  "schemaVersion": "1.0.0",
+  "profile": {
     "name": "Eswaran S",
-    "role": "SOC Analyst · Blue Team · Threat Detection",
-    "tagline": "Monitoring. Detecting. Responding.",
-    "typingLines": [
-      "Cyber Defense Specialist",
-      "SOC Level 1 Analyst",
-      "SIEM Engineer",
-      "Threat Hunter",
-      "Incident Responder",
-      "CTF Player"
-    ],
-    "statusBadge": "Open to L1 SOC Roles",
-    "statusType": "available",
-    "metrics": [
-      { "value": "9.23", "label": "CGPA / 10", "suffix": "" },
-      { "value": "5", "label": "Certifications", "suffix": "+" },
-      { "value": "3", "label": "CTF Placements", "suffix": "" },
-      { "value": "10", "label": "Months Internship", "suffix": "" }
-    ],
-    "cta": {
-      "primary": { "label": "View Projects", "href": "#projects" },
-      "secondary": { "label": "Download Resume", "href": "assets/Eswaran_S_Resume_SOC_L1.pdf" }
-    }
+    "initials": "E",
+    "title": "Security Operations Analyst",
+    "tagline": "Building security tooling, investigating systems, and automating analysis.",
+    "location": "Chennai, India",
+    "status": "open",
+    "statusLabel": "Available",
+    "availability": "Seeking L1 SOC Analyst opportunities",
+    "profileImage": "",
+    "coverImage": ""
   },
+  "contact": {
+    "email": "eswaransk06@gmail.com",
+    "location": "Chennai, India",
+    "resume": "assets/resume/Eswaran_S_Resume_S.docx"
+  },
+  "socials": [
+    {"id": "github", "label": "GitHub", "handle": "EswaranS-06", "url": "https://github.com/EswaranS-06", "icon": "github"},
+    {"id": "linkedin", "label": "LinkedIn", "handle": "eswarans06", "url": "https://linkedin.com/in/eswarans06", "icon": "linkedin"},
+    {"id": "tryhackme", "label": "TryHackMe", "handle": "RaymenRex", "url": "https://tryhackme.com/p/RaymenRex", "icon": "tryhackme"}
+  ],
   "about": {
-    "paragraphs": [
-      "Cybersecurity fresher with hands-on experience in SIEM platforms (Wazuh, Splunk, Sumo Logic), log analysis, incident triage, and detection rule engineering — gained through an internship at HTC Global Services and a self-built SOC home lab.",
-      "Completed TryHackMe SOC Level 1 path with demonstrated threat detection and alert investigation skills. Earned a TCS interview offer at HackQuest CTF and a PEC CTF Top 5 finish out of 100+ participants.",
-      "Seeking an L1 SOC Analyst role to contribute practical skills in security monitoring, false positive triage, IOC identification, and MITRE ATT&CK-mapped threat response.",
-      "Actively building home lab environments to simulate real-world attack scenarios and continuously expanding detection rule coverage across multiple MITRE ATT&CK stages."
-    ],
-    "quickStats": [
-      { "label": "Location", "value": "Chennai, India", "icon": "📍" },
-      { "label": "Institution", "value": "Hindustan Institute of Technology & Science", "icon": "🎓" },
-      { "label": "Degree", "value": "BCA — Cyber Security (2023–2026)", "icon": "📘" },
-      { "label": "TryHackMe", "value": "RaymenRex", "icon": "🔰" }
-    ]
+    "summary": "Cyber security fresher with hands-on experience in SIEM (Wazuh, Splunk, Sumo Logic), log analysis, incident triage, and detection rule engineering through an internship at HTC Global Services and a self-built SOC home lab. Completed the TryHackMe SOC Level 1 path; demonstrated threat detection and alert investigation skills via CTF placements including a TCS HackQuest interview offer and a PEC CTF Top 5 finish.",
+    "objective": "Seeking an L1 SOC Analyst role to contribute practical skills in security monitoring, false positive triage, IOC identification, and MITRE ATT&CK-mapped threat response.",
+    "focus": ["Security Operations", "Threat Detection", "Log Analysis", "Detection Engineering", "Incident Triage"]
   },
-  "skills": {
-    "categories": [
-      {
-        "id": "siem",
-        "label": "SIEM & Log Analysis",
-        "icon": "📊",
-        "color": "green",
-        "items": ["Wazuh", "Splunk", "ELK Stack", "Sumo Logic", "Windows Event Logs", "Sysmon"]
-      },
-      {
-        "id": "soc",
-        "label": "SOC & Threat Detection",
-        "icon": "🔍",
-        "color": "blue",
-        "items": ["Alert Investigation", "False Positive Triage", "Log Analysis", "Incident Triage", "IOC Identification", "Alert Escalation", "MITRE ATT&CK", "Detection Rule Engineering"]
-      },
-      {
-        "id": "dfir",
-        "label": "DFIR & Incident Response",
-        "icon": "🧪",
-        "color": "yellow",
-        "items": ["Digital Forensics", "Incident Response Lifecycle", "Evidence Preservation", "Threat Containment", "Post-Incident Reporting"]
-      },
-      {
-        "id": "network",
-        "label": "Networking",
-        "icon": "🌐",
-        "color": "cyan",
-        "items": ["TCP/IP", "DNS", "HTTP/HTTPS", "OSI Model", "VPN", "Firewall", "IDS/IPS", "Wireshark"]
-      },
-      {
-        "id": "tools",
-        "label": "Security Tools",
-        "icon": "🛠️",
-        "color": "red",
-        "items": ["Wireshark", "Burp Suite", "Metasploit", "Nmap", "Snort", "VirusTotal", "AbuseIPDB", "Sysmon"]
-      },
-      {
-        "id": "os",
-        "label": "Operating Systems",
-        "icon": "💻",
-        "color": "purple",
-        "items": ["Windows (Admin & Troubleshooting)", "Linux (Admin & Troubleshooting)", "Kali Linux", "Debian", "Ubuntu"]
-      },
-      {
-        "id": "scripting",
-        "label": "Scripting & Automation",
-        "icon": "⚡",
-        "color": "orange",
-        "items": ["Python", "Bash", "PowerShell", "REST APIs", "JWT Authentication"]
-      }
-    ]
-  },
-  "projects": [
-    {
-      "id": "proj-001",
-      "title": "Mini SOC Lab — Wazuh SIEM",
-      "status": "ongoing",
-      "featured": true,
-      "category": "SOC / Threat Detection",
-      "shortDescription": "3-node SOC home lab built with Wazuh SIEM on Debian, simulating real-world attack scenarios and end-to-end detection, incident triage, and alert escalation workflows.",
-      "features": [
-        "Architected 3-node lab: Wazuh Server (Debian) + 2 Windows 11 endpoints via VMware",
-        "Adversarial simulations from Kali Linux — recon, exploitation, and persistence TTPs",
-        "Custom Wazuh detection rules: SSH brute-force, failed auth chains, suspicious process creation",
-        "Sub-30-second MTTD on simulated attacks with real-time alert generation",
-        "Iteratively expanding MITRE ATT&CK-mapped attack scenario coverage"
-      ],
-      "techStack": ["Wazuh", "Sysmon", "Kali Linux", "VMware", "Windows Event Logs", "Log Analysis"],
-      "github": "https://github.com/EswaranS-06",
-      "liveLink": null,
-      "status_detail": "Active — expanding attack scenarios"
-    },
-    {
-      "id": "proj-002",
-      "title": "Web VAPT Document Automation Tool",
-      "status": "completed",
-      "featured": true,
-      "category": "Security Automation / Web",
-      "shortDescription": "Full-stack web platform to streamline VAPT documentation, software release management, and report exchange workflows with JWT auth and role-based access control.",
-      "features": [
-        "JWT-based authentication and RBAC for secure user access and document management",
-        "Automated VAPT report creation, editing, exporting, and emailing workflows",
-        "REST API endpoint security testing for auth, authorization, and access control vulnerabilities",
-        "Identified and remediated security misconfigurations to strengthen application security posture",
-        "Reduced manual reporting effort for penetration testing engagements"
-      ],
-      "techStack": ["Python", "JWT", "REST APIs", "RBAC", "Web Security", "VAPT"],
-      "github": "https://github.com/EswaranS-06",
-      "liveLink": null,
-      "status_detail": "Completed"
-    }
+  "currentFocus": [
+    "Expanding MITRE ATT&CK detection coverage in SOC home lab",
+    "Deepening Splunk SPL and detection rule engineering",
+    "Practicing adversarial simulation and TTP mapping",
+    "Advancing through offensive security paths on TryHackMe"
   ],
   "experience": [
     {
-      "id": "exp-001",
+      "id": "htc-global",
       "company": "HTC Global Services",
       "role": "Cyber Security Trainee",
-      "duration": "June 2025 – April 2026",
+      "type": "Internship / Training",
+      "start": "2025-06",
+      "end": "2026-04",
       "location": "Chennai, India",
-      "type": "internship",
-      "current": true,
+      "summary": "Structured 10-month training programme covering six cybersecurity domains, Also learnt about SOC operations in Sumo Logic SIEM.",
+      "responsibilities": [
+        "Built foundational SOC operations competency across 6 cybersecurity domains - Windows/Linux administration, network protocol analysis, SIEM concepts, incident response lifecycle, and DFIR - over a 10-month structured training programme.",
+        "Monitored and investigated security events using Sumo Logic SIEM - configured log collection pipelines, authored search queries, and built dashboards to surface anomalous authentication and lateral movement indicators across training environments.",
+        "Detected and analysed security event categories - including failed logon patterns, suspicious process creation, and network anomalies - by correlating Wireshark packet captures, Sysmon telemetry, and Windows Event Log data for alert investigation and false positive triage.",
+        "Executed network reconnaissance and vulnerability assessment using Nmap and Metasploit in adversarial simulation exercises, mapping identified attack techniques to MITRE ATT&CK TTPs to strengthen defensive detection strategies."
+      ],
+      "technologies": ["Sumo Logic", "Wireshark", "Sysmon", "Windows Event Log", "Nmap", "Metasploit", "MITRE ATT&CK"],
+      "media": []
+    }
+  ],
+  "projects": [
+    {
+      "id": "soc-lab",
+      "name": "Mini SOC Lab",
+      "subtitle": "3-Node Security Operations Home Lab",
+      "status": "Active",
+      "featured": true,
+      "domain": "Security Operations",
+      "summary": "Architected and operated a 3-node SOC home lab simulating real-world threat detection, incident triage, and alert escalation workflows end-to-end.",
+      "description": "A self-engineered security operations environment built to practice full-cycle SOC workflows. A Debian-based SIEM node ingests telemetry from two Windows 11 endpoints virtualised on VMware, while a Kali Linux attacker host launches adversarial simulations. Custom detection rules surface attacks with sub-30-second mean time to detect.",
+      "problem": "Real SOC environments cannot be safely used for learning. Gaining hands-on experience with end-to-end detection, triage, and escalation workflows requires a personal lab that mirrors production telemetry sources without exposing production systems.",
+      "solution": "Build a self-contained virtual network where a SIEM (Wazuh/Splunk) collects Windows Event Log and Sysmon telemetry from monitored endpoints, while a Kali attacker runs MITRE ATT&CK-mapped TTPs. Engineer custom detection rules, trigger real-time alerts, and iterate detection coverage across multiple attack stages.",
+      "role": "Sole builder - architecture, detection engineering, adversarial simulation, and analysis.",
+      "technologies": ["Wazuh", "Splunk", "Sysmon", "Kali Linux", "Debian", "VMware", "Windows 11"],
+      "securityAreas": ["SIEM", "Log Analysis", "Detection Engineering", "Threat Detection", "Incident Triage"],
+      "features": [
+        "3-node virtual SOC topology (SIEM + 2 Windows endpoints)",
+        "Kali Linux adversarial simulation node",
+        "Custom detection rules for SSH brute-force and suspicious process creation",
+        "Real-time alerting with sub-30-second mean time to detect",
+        "MITRE ATT&CK-mapped attack scenarios for detection validation"
+      ],
       "highlights": [
-        "Built foundational SOC operations competency across 6 cybersecurity domains over a 10-month structured training programme — Windows/Linux administration, network protocol analysis, SIEM concepts, incident response lifecycle, and DFIR.",
-        "Monitored and investigated security events using Sumo Logic SIEM — configured log collection pipelines, authored search queries, and built dashboards to surface anomalous authentication and lateral movement indicators.",
-        "Detected and analysed security event categories by correlating Wireshark packet captures, Sysmon telemetry, and Windows Event Log data for alert investigation and false positive triage.",
-        "Executed network reconnaissance and vulnerability assessment using Nmap and Metasploit in adversarial simulation exercises, mapping identified attack techniques to MITRE ATT&CK TTPs."
-      ]
+        "Sub-30-second MTTD on simulated attacks",
+        "End-to-end threat detection, triage, and escalation workflow",
+        "Iterative expansion of MITRE ATT&CK coverage"
+      ],
+      "github": "",
+      "demo": "",
+      "media": []
+    },
+    {
+      "id": "evidex",
+      "name": "Web VAPT Document Automation Tool",
+      "subtitle": "Penetration Testing Report Platform",
+      "status": "Active",
+      "featured": true,
+      "domain": "Application Security",
+      "summary": "Web-based automation platform streamlining VAPT documentation, release management, and report exchange workflows for penetration testing engagements.",
+      "description": "A web application that automates the creation, editing, export, and secure exchange of VAPT (Vulnerability Assessment and Penetration Testing) reports. Built with JWT authentication and role-based access control, then hardened through direct security testing of authentication flows, authorisation, and REST API access control.",
+      "problem": "Manual VAPT reporting is time-consuming and error-prone. Engagement teams need a secure, auditable way to create, manage, and exchange pentest reports across release cycles.",
+      "solution": "Build a web platform with automated report creation, editing, export, and email workflows, fronted by JWT auth and RBAC. Harden the platform by testing REST API endpoints for authentication, authorisation, and access control vulnerabilities, remediating discovered misconfigurations.",
+      "role": "Developer - feature build, security testing, and remediation.",
+      "technologies": ["Python", "JWT", "REST APIs", "RBAC"],
+      "securityAreas": ["Web Application Security", "Authentication and Authorisation", "API Security", "Access Control"],
+      "features": [
+        "JWT-based authentication and role-based access control",
+        "Automated VAPT report creation, editing, and export",
+        "Email-based report exchange workflow",
+        "Security-tested authentication, authorisation, and access control flows"
+      ],
+      "highlights": [
+        "Reduced manual reporting effort across release workflows",
+        "Identified and remediated security misconfigurations in REST API endpoints",
+        "Validated all authentication flows through security testing"
+      ],
+      "github": "",
+      "demo": "",
+      "media": []
+    }
+  ],
+  "skills": [
+    {"category": "SIEM & Log Analysis", "items": ["Wazuh", "Splunk (Basics)", "ELK Stack (Basics)", "Sumo Logic", "Windows Event Logs", "Sysmon"]},
+    {"category": "Threat Detection & SOC", "items": ["Alert Investigation", "False Positive Triage", "Log Analysis", "Incident Triage", "IOC Identification", "Alert Escalation", "MITRE ATT&CK (Fundamentals)", "Detection Rule Engineering"]},
+    {"category": "Operating Systems", "items": ["Windows (Administration & Troubleshooting)", "Linux (Administration & Troubleshooting)"]},
+    {"category": "Networking", "items": ["TCP/IP", "DNS", "HTTP/HTTPS", "OSI Model", "VPN", "Firewall", "IDS/IPS"]},
+    {"category": "Security Tools", "items": ["Wireshark", "Burp Suite", "Metasploit", "Nmap", "Snort", "VirusTotal", "AbuseIPDB"]},
+    {"category": "Scripting & Automation", "items": ["Python (Basics)", "Bash", "PowerShell"]},
+    {"category": "Soft Skills", "items": ["Analytical Thinking", "Problem-Solving", "Adaptability", "Teamwork", "Communication"]}
+  ],
+  "certifications": [
+    {"id": "thm-soc-l1", "name": "SOC Level 1", "issuer": "TryHackMe", "date": "2026-06", "credentialId": "THM-PSBQDZUV2G", "credentialUrl": "https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-PSBQDZUV2G.pdf", "image": "assets/certificates/soclevel1_img.png", "document": "assets/certificates/SOCLevel1_Certificate.pdf"},
+    {"id": "cisco-networking", "name": "Networking Basics", "issuer": "Cisco NetAcad", "date": "2026-03", "credentialId": "", "credentialUrl": "", "image": "", "document": ""},
+    {"id": "thm-jr-pentester", "name": "Jr Penetration Tester Path", "issuer": "TryHackMe", "date": "2026-01", "credentialId": "", "credentialUrl": "", "image": "", "document": ""},
+    {"id": "thm-cyber101", "name": "Cyber Security 101", "issuer": "TryHackMe", "date": "2025-12", "credentialId": "", "credentialUrl": "", "image": "", "document": ""},
+    {"id": "ibm-cyber-fund", "name": "Cybersecurity Fundamentals", "issuer": "IBM SkillsBuild", "date": "2024-07", "credentialId": "", "credentialUrl": "", "image": "", "document": ""}
+  ],
+  "achievements": [
+    {
+      "id": "tcs-hackquest",
+      "title": "TCS HackQuest - Interview Offer",
+      "organization": "Tata Consultancy Services",
+      "date": "2026",
+      "result": "Interview offer earned",
+      "description": "Earned a TCS interview offer by advancing through 2 elimination rounds of HackQuest CTF, solving challenges in JavaScript deobfuscation, DNS-over-HTTPS traffic analysis, and API security testing.",
+      "tags": ["JavaScript Deobfuscation", "DNS-over-HTTPS", "API Security"],
+      "media": []
+    },
+    {
+      "id": "pec-ctf",
+      "title": "PEC CTF - 5th Place",
+      "organization": "PEC Capture The Flag",
+      "date": "2026",
+      "result": "5th of 100+ participants",
+      "description": "Secured 5th place in the PEC Capture The Flag (CTF) competition out of 100+ participants, demonstrating skills in cryptography, OSINT, steganography, and reverse engineering.",
+      "tags": ["Cryptography", "OSINT", "Steganography", "Reverse Engineering"],
+      "media": []
+    },
+    {
+      "id": "cybertron-ctf",
+      "title": "Cybertron CTF - Rank #34",
+      "organization": "Cybertron CTF",
+      "date": "2026",
+      "result": "Rank #34 - 4,430 points",
+      "description": "Ranked #34 with 4,430 points in Cybertron CTF - a 30-hour continuous Jeopardy-style event - competing against cybersecurity students and professionals.",
+      "tags": ["Jeopardy CTF", "30-hour endurance"],
+      "media": []
     }
   ],
   "education": [
     {
+      "id": "hindustan-bca",
+      "degree": "Bachelor of Computer Applications (BCA) - Cyber Security",
       "institution": "Hindustan Institute of Technology & Science",
-      "degree": "Bachelor of Computer Applications (BCA)",
+      "location": "Chennai, India",
+      "start": "2023",
+      "end": "26",
+      "score": "CGPA 9.30 / 10 (93%)",
       "specialisation": "Cyber Security",
-      "duration": "2023 – 2026",
-      "score": "CGPA: 9.23 / 10 (92.3%)",
-      "status": "current",
-      "extras": ["Class Representative"]
+      "notes": "Class Representative",
+      "media": []
     }
   ],
-  "certifications": [
+  "labs": [
     {
-      "id": "cert-001",
-      "name": "SOC Level 1",
-      "issuer": "TryHackMe",
-      "date": "Jun 2026",
-      "credentialId": null,
-      "type": "professional",
-      "verifyUrl": "https://tryhackme.com/p/RaymenRex",
-      "thumbnail": "assets/certificates/soc-l1-thm.png",
-      "pdf": "assets/certificates/soc-l1-thm.pdf",
-      "color": "green"
-    },
-    {
-      "id": "cert-002",
-      "name": "Networking Basics",
-      "issuer": "Cisco NetAcad",
-      "date": "Mar 2026",
-      "credentialId": null,
-      "type": "foundational",
-      "verifyUrl": null,
-      "thumbnail": "assets/certificates/networking-cisco.png",
-      "pdf": "assets/certificates/networking-cisco.pdf",
-      "color": "blue"
-    },
-    {
-      "id": "cert-003",
-      "name": "Jr Penetration Tester Path",
-      "issuer": "TryHackMe",
-      "date": "Jan 2026",
-      "credentialId": null,
-      "type": "practical",
-      "verifyUrl": "https://tryhackme.com/p/RaymenRex",
-      "thumbnail": "assets/certificates/jr-pentest-thm.png",
-      "pdf": "assets/certificates/jr-pentest-thm.pdf",
-      "color": "yellow"
-    },
-    {
-      "id": "cert-004",
-      "name": "Cyber Security 101",
-      "issuer": "TryHackMe",
-      "date": "Dec 2025",
-      "credentialId": null,
-      "type": "foundational",
-      "verifyUrl": "https://tryhackme.com/p/RaymenRex",
-      "thumbnail": "assets/certificates/cybersec-101-thm.png",
-      "pdf": "assets/certificates/cybersec-101-thm.pdf",
-      "color": "cyan"
-    },
-    {
-      "id": "cert-005",
-      "name": "Cybersecurity Fundamentals",
-      "issuer": "IBM SkillsBuild",
-      "date": "Jul 2024",
-      "credentialId": null,
-      "type": "foundational",
-      "verifyUrl": null,
-      "thumbnail": "assets/certificates/cybersec-ibm.png",
-      "pdf": "assets/certificates/cybersec-ibm.pdf",
-      "color": "purple"
+      "id": "soc-home-lab",
+      "name": "SOC Home Lab",
+      "type": "Security Operations Lab",
+      "status": "Active",
+      "description": "Personal 3-node SOC environment for threat detection engineering, adversarial simulation, and alert triage practice.",
+      "technologies": ["Wazuh", "Splunk", "Sysmon", "VMware", "Kali Linux"],
+      "link": "#project/soc-lab"
     }
   ],
-  "achievements": [
-    {
-      "id": "ach-001",
-      "title": "TCS HackQuest CTF",
-      "detail": "Earned a TCS interview offer by advancing through 2 elimination rounds, solving challenges in JavaScript deobfuscation, DNS-over-HTTPS traffic analysis, and API security testing.",
-      "tag": "CTF · TCS Interview Offer",
-      "icon": "🏆",
-      "rank": null
-    },
-    {
-      "id": "ach-002",
-      "title": "PEC Capture The Flag",
-      "detail": "Secured 5th place out of 100+ participants, demonstrating strong skills in cryptography, OSINT, steganography, and reverse engineering.",
-      "tag": "CTF · Top 5 / 100+",
-      "icon": "🥇",
-      "rank": "5th"
-    },
-    {
-      "id": "ach-003",
-      "title": "Cybertron CTF",
-      "detail": "Ranked #34 with 4,430 points in a Jeopardy-style 30-hour continuous CTF event competing against cybersecurity students and professionals.",
-      "tag": "CTF · #34 · 4,430 pts",
-      "icon": "⚡",
-      "rank": "#34"
-    }
-  ],
-  "tools": [
-    { "name": "Wazuh", "category": "SIEM" },
-    { "name": "Splunk", "category": "SIEM" },
-    { "name": "Sumo Logic", "category": "SIEM" },
-    { "name": "ELK Stack", "category": "SIEM" },
-    { "name": "Wireshark", "category": "Network" },
-    { "name": "Nmap", "category": "Recon" },
-    { "name": "Metasploit", "category": "Exploitation" },
-    { "name": "Burp Suite", "category": "Web" },
-    { "name": "Snort", "category": "IDS/IPS" },
-    { "name": "VirusTotal", "category": "Threat Intel" },
-    { "name": "AbuseIPDB", "category": "Threat Intel" },
-    { "name": "Sysmon", "category": "Endpoint" },
-    { "name": "Kali Linux", "category": "OS" },
-    { "name": "VMware", "category": "Lab" }
-  ],
-  "contact": {
-    "email": "eswaransk06@gmail.com",
-    "phone": "+91-79042 77715",
-    "location": "Chennai, Tamil Nadu, India",
-    "availability": "Available for L1 SOC Analyst roles",
-    "links": [
-      {
-        "label": "LinkedIn",
-        "url": "https://linkedin.com/in/eswarans06",
-        "handle": "eswarans06",
-        "icon": "linkedin"
-      },
-      {
-        "label": "GitHub",
-        "url": "https://github.com/EswaranS-06",
-        "handle": "EswaranS-06",
-        "icon": "github"
-      },
-      {
-        "label": "TryHackMe",
-        "url": "https://tryhackme.com/p/RaymenRex",
-        "handle": "RaymenRex",
-        "icon": "tryhackme"
-      }
-    ]
-  },
-  "resume": {
-    "filename": "Eswaran_S_Resume_SOC_L1.pdf",
-    "path": "assets/Eswaran_S_Resume_SOC_L1.pdf",
-    "label": "Download Resume (SOC L1)"
-  },
-  "footer": {
-    "credit": "Eswaran S",
-    "tagline": "Cyber Defense · Blue Team · SOC Operations",
-    "year": "2026"
-  }
+  "interests": ["Detection Engineering", "Adversarial Simulation", "MITRE ATT&CK Mapping", "Security Automation", "Web Application Security", "Cloud Security"],
+  "documents": [
+    {"id": "resume-soc", "label": "Resume - SOC Analyst", "description": "Tailored resume for SOC / Security Operations Analyst roles.", "type": "docx", "path": "assets/resume/Eswaran_S_Resume_S.docx"},
+    {"id": "resume-wazuh", "label": "Resume - Wazuh Focus", "description": "Resume variant highlighting Wazuh / SIEM focus.", "type": "docx", "path": "assets/resume/Eswaran_S_Resume_W.docx"},
+    {"id": "cv-full", "label": "Full CV", "description": "Complete curriculum vitae.", "type": "pdf", "path": "assets/resume/Eswaran_S_CV.pdf"},
+    {"id": "resume-soc-l1", "label": "Resume - SOC L1 (PDF)", "description": "PDF resume targeted at SOC Level 1 positions.", "type": "pdf", "path": "assets/resume/Eswaran_S_Resume_SOC_L1.pdf"},
+    {"id": "resume-c-pdf", "label": "Resume - PDF", "description": "Additional PDF resume variant.", "type": "pdf", "path": "assets/resume/Eswaran_S_Resume_C.pdf"}
+  ]
 }

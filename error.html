@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="midnight">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <title>404 - Resource Not Found | Security Workspace</title>
+    <meta name="description" content="The requested resource or page could not be located in this workspace.">
+    <meta name="robots" content="noindex, follow">
+
+    <meta name="theme-color" content="#080d1a">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 2rem 1rem;
+            position: relative;
+            z-index: 10;
+        }
+        .error-card {
+            background: var(--surface-glass);
+            border: 1px solid var(--border-strong);
+            border-radius: var(--radius-lg);
+            padding: 3rem 2.5rem;
+            max-width: 520px;
+            width: 100%;
+            text-align: center;
+            box-shadow: var(--shadow-deep), var(--glow-accent);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            animation: cardFade 400ms var(--ease-out);
+        }
+        @keyframes cardFade {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .error-card__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.85rem;
+            background: rgba(248, 113, 113, 0.12);
+            border: 1px solid rgba(248, 113, 113, 0.3);
+            border-radius: var(--radius-sm);
+            color: var(--danger);
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .error-card__code {
+            font-family: var(--font-mono);
+            font-size: clamp(3.5rem, 8vw, 5.5rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.04em;
+            text-shadow: 0 0 24px rgba(56, 189, 248, 0.25);
+        }
+        .error-card__title {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 0.85rem;
+            font-weight: 600;
+        }
+        .error-card__desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        .error-card__actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.6rem;
+            background: var(--accent);
+            color: #040914;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: var(--radius-sm);
+            transition: all var(--duration-fast) var(--ease-out);
+            border: 1px solid transparent;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn-home:hover, .btn-home.is-hover {
+            background: var(--accent-ice);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+            transform: translateY(-1px);
+        }
+        .btn-home:focus-visible, .btn-home.is-focus {
+            outline: 2px solid var(--accent-ice);
+            outline-offset: 2px;
+        }
+        .btn-home:active, .btn-home.is-active {
+            transform: translateY(1px);
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.4rem;
+            background: rgba(30, 41, 59, 0.8);
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.9rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-strong);
+            transition: all var(--duration-fast) var(--ease-out);
+            text-decoration: none;
+        }
+        .btn-secondary:hover, .btn-secondary.is-hover {
+            background: var(--surface-raised);
+            border-color: var(--accent);
+            color: var(--accent-ice);
+        }
+        .btn-secondary:focus-visible, .btn-secondary.is-focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+        .btn-secondary:active, .btn-secondary.is-active {
+            transform: translateY(1px);
+        }
+        .error-footer {
+            margin-top: 2rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border-soft);
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Atmospheric background -->
+    <div class="atmosphere" aria-hidden="true">
+        <div class="atmosphere__base"></div>
+        <div class="atmosphere__aurora"></div>
+        <div class="atmosphere__grid"></div>
+        <div class="atmosphere__noise"></div>
+    </div>
+
+    <main class="error-page">
+        <div class="error-card">
+            <div class="error-card__badge">
+                <span class="status-dot" data-status="danger" aria-hidden="true"></span>
+                <span>ERROR_404 // ROUTE_NOT_FOUND</span>
+            </div>
+            
+            <div class="error-card__code" id="errorCode">404</div>
+            <h1 class="error-card__title" id="errorTitle">Page or Resource Not Found</h1>
+            <p class="error-card__desc">
+                The path you attempted to access does not exist or has been relocated within this security portfolio workspace.
+            </p>
+
+            <div class="error-card__actions">
+                <a href="index.html" class="btn-home" id="btnHome" aria-label="Return to portfolio workspace home">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>Return to Workspace</span>
+                </a>
+                <a href="index.html#contact" class="btn-secondary" id="btnContact" aria-label="Contact system administrator">
+                    <span>Contact Admin</span>
+                </a>
+            </div>
+
+            <div class="error-footer">
+                <span>SYSTEM / AWS S3 STATIC</span>
+                <span>STATUS: OPERATIONAL</span>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
