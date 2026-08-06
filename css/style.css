@@ -460,6 +460,20 @@ kbd {
   border-bottom: 1px solid var(--border);
   margin-bottom: 18px;
 }
+.nav__identity::after,
+.nav__identity *::after,
+.nav__identity-inner::after {
+  display: none !important;
+  content: none !important;
+}
+.nav__identity .nav__identity,
+.nav__identity .nav__identity-inner,
+.nav__identity-inner {
+  padding: 0 !important;
+  border: none !important;
+  border-bottom: none !important;
+  margin: 0 !important;
+}
 .identity__avatar {
   width: 48px;
   height: 48px;
@@ -657,20 +671,34 @@ kbd {
   text-transform: uppercase;
 }
 .view__title {
+  display: inline-block;
+  width: fit-content;
+  max-width: fit-content;
   font-size: clamp(28px, 3.4vw, 44px);
   font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--text-primary);
   margin: 0;
   line-height: 1.05;
+  position: relative;
 }
 .view__title::after {
   content: "";
   display: block;
-  width: 40px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), transparent);
-  margin-top: 12px;
+  width: 100%;
+  max-width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent) 55%, var(--accent-violet) 85%, transparent 100%);
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.5), 0 0 3px var(--accent-cyan);
+  margin-top: 14px;
+  transition: box-shadow var(--duration-mid), transform var(--duration-mid);
+  transform-origin: left center;
+}
+.view__head:hover .view__title::after,
+.view__title:hover::after {
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.85), 0 0 6px var(--accent-cyan);
+  transform: scaleX(1.05);
 }
 .view__sub {
   font-size: 14px;
@@ -961,43 +989,88 @@ kbd {
    9. TIMELINE (Experience)
    ========================================================= */
 .timeline {
+  --timeline-line-x: 18px;
+  --line-width: 2px;
+  --dot-size: 16px;
+  --item-left-offset: 46px;
+
   position: relative;
-  padding: 8px 0 0 24px;
+  padding: 8px 0 0 var(--item-left-offset);
 }
+
+/* Glowing Neon Stem Line */
 .timeline::before {
   content: "";
   position: absolute;
-  left: 8px;
-  top: 22px;
-  bottom: 18px;
-  width: 1px;
-  background: linear-gradient(180deg, var(--accent), transparent);
-  opacity: 0.4;
+  left: calc(var(--timeline-line-x) - (var(--line-width) / 2));
+  top: 24px;
+  bottom: 24px;
+  width: var(--line-width);
+  background: linear-gradient(180deg, var(--accent-cyan) 0%, var(--accent) 50%, var(--accent-violet) 85%, transparent 100%);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.4), 0 0 3px var(--accent);
+  border-radius: 2px;
 }
 
 .timeline__item {
   position: relative;
-  padding: 14px 20px 28px 28px;
-  margin-left: 8px;
-  border-radius: var(--radius);
+  padding: 18px 24px 28px;
+  margin-left: 0;
+  border-radius: var(--radius-lg, 12px);
   background: var(--surface-glass);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
-  margin-bottom: 22px;
-  transition: border-color var(--duration-mid), transform var(--duration-mid);
+  margin-bottom: 26px;
+  transition: border-color var(--duration-mid), transform var(--duration-mid), box-shadow var(--duration-mid);
 }
-.timeline__item:hover { border-color: var(--border-strong); transform: translateX(2px); }
+
+.timeline__item:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--border-strong), 0 0 20px -4px rgba(56, 189, 248, 0.15);
+}
+
+/* Horizontal Connector Trace from stem to card */
+.timeline__item::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--timeline-line-x) - var(--item-left-offset));
+  top: 31px;
+  width: calc(var(--item-left-offset) - var(--timeline-line-x));
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), var(--border-strong));
+  opacity: 0.55;
+  transition: opacity var(--duration-mid), background var(--duration-mid), box-shadow var(--duration-mid);
+  pointer-events: none;
+}
+
+.timeline__item:hover::after {
+  opacity: 1;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent));
+  box-shadow: 0 0 8px var(--accent-cyan);
+}
+
+/* Multi-Ring Cyber Node Dot */
 .timeline__item::before {
   content: "";
   position: absolute;
-  left: -23px;
-  top: 24px;
-  width: 11px;
-  height: 11px;
+  left: calc(var(--timeline-line-x) - var(--item-left-offset) - (var(--dot-size) / 2));
+  top: 23px;
+  width: var(--dot-size);
+  height: var(--dot-size);
   border-radius: 50%;
-  background: var(--bg-primary);
+  background: radial-gradient(circle, var(--accent-cyan) 30%, var(--bg-primary) 35%);
   border: 2px solid var(--accent);
-  box-shadow: 0 0 0 4px rgba(78, 162, 255, 0.15);
+  box-shadow: 0 0 0 4px var(--bg-primary), 0 0 0 6px rgba(56, 189, 248, 0.25), 0 0 12px rgba(56, 189, 248, 0.35);
+  transition: transform var(--duration-mid), box-shadow var(--duration-mid), background var(--duration-mid), border-color var(--duration-mid);
+  z-index: 2;
+}
+
+.timeline__item:hover::before {
+  background: radial-gradient(circle, #ffffff 40%, var(--accent-cyan) 45%);
+  border-color: var(--text-primary);
+  box-shadow: 0 0 0 4px var(--bg-primary), 0 0 0 8px rgba(34, 211, 238, 0.45), 0 0 20px var(--accent-cyan);
+  transform: scale(1.25);
 }
 
 .timeline__meta {

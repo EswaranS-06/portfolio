@@ -784,7 +784,7 @@
      Navigation
      ========================================================= */
   function createNavIdentity(profile, socials) {
-    const wrap = el("div", { class: "nav__identity" });
+    const wrap = el("div", { class: "nav__identity-inner" });
     const avatar = el("div", { class: "identity__avatar", attrs: { "aria-hidden": "true" } });
     if (profile.profileImage) {
       const img = el("img", { attrs: { src: safeString(profile.profileImage), alt: safeString(profile.name), loading: "lazy" } });
