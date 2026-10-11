@@ -1018,18 +1018,11 @@
   ],
   "documents": [
     {
-      "id": "cv-full",
-      "label": "Full CV",
-      "description": "Complete curriculum vitae.",
+      "id": "resume-10-oct-2026",
+      "label": "Resume",
+      "description": "Complete resume of Eswaran S, Cybersecurity Analyst (SOC & DPDPA Compliance). Updated 10 October 2026.",
       "type": "pdf",
-      "path": "assets/resume/Eswaran_S_CV.pdf"
-    },
-    {
-      "id": "resume-c-pdf",
-      "label": "Resume - PDF",
-      "description": "Tailored resume for SOC / Security Operations Analyst roles.",
-      "type": "pdf",
-      "path": "assets/resume/Eswaran_S_Resume_C.pdf"
+      "path": "assets/resume/Eswaran_S_Resume.pdf"
     }
   ],
   "testimonials": [],
